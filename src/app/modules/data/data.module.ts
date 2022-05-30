@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataComponent } from './data.component';
 import { DataRoutingModule } from "./data-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -9,9 +10,10 @@ import { DataRoutingModule } from "./data-routing.module";
   declarations: [
     DataComponent,
   ],
-  imports: [
-    CommonModule,
-    DataRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        DataRoutingModule,
+        ReactiveFormsModule
+    ]
 })
 export class DataModule { }

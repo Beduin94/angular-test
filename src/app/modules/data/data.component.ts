@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { StorageService } from "../../app-common/services/storage/storage.service";
 
 @Component({
   selector: 'app-data',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup = this.fb.group({
+    json: [null, Validators.required],
+  });
+
+  constructor(
+    private fb: FormBuilder,
+    private storageService: StorageService,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  save(): void {
+    const data = this.form.value;
+    this.storageService.setLocalStorage(data.json);
   }
 
 }

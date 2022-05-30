@@ -1,0 +1,23 @@
+:host {
+  .form {
+    text-align: center;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  }
+}
