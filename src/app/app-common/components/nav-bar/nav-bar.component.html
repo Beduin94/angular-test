@@ -1,1 +1,9 @@
-<p>nav-bar works!</p>
+<div class="nav-container">
+  <ul>
+    <li *ngFor="let link of navLinks">
+      <a [routerLink]="link.link" routerLinkActive="active-link">
+        {{ link.label }}
+      </a>
+    </li>
+  </ul>
+</div>
