@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: sans-serif;
+
+  button {
+    margin-top: 25px;
+    background: darkgray;
+    border: none;
+    padding: 5px 60px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    &:disabled {
+      cursor: default;
+      background: lightgray;
+    }
+  }
+
+  textarea, input {
+    border: solid lightgray 2px;
+    padding: 4px;
+  }
+}

@@ -1,6 +1,6 @@
 <form [formGroup]="form" class="form" (ngSubmit)="save()">
   <label>Введите JSON:</label>
-  <textarea formControlName="json" rows="20"></textarea>
+  <textarea formControlName="json" rows="30"></textarea>
   <div>
     <button [disabled]="form.invalid || form.pristine">
       Сохранить

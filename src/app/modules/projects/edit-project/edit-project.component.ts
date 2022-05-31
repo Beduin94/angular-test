@@ -46,7 +46,7 @@ export class EditProjectComponent implements OnInit {
   save(): void {
     const data: IProject = Object.assign(this.project, this.dateFormatService.toISOString(this.form.value));
     this.projectService.updateProject(data);
-    console.log(data);
+    this.changeEditable();
   }
 
 }
