@@ -25,7 +25,7 @@ export class DataComponent implements OnInit {
 
   save(): void {
     const data = this.form.value;
-    this.storageService.setLocalStorage(data.json);
+    this.storageService.setLocalStorage(JSON.parse(data.json).Projects);
     this.router.navigate(['projects']);
   }
 

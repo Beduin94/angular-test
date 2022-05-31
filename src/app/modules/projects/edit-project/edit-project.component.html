@@ -1,1 +1,51 @@
-<p>edit-project works!</p>
+<div *ngIf="project" class="container">
+  <h2>{{project.subject}}</h2>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="form-row">
+      <div class="form-field">
+        <label>Дата начала</label>
+        <div *ngIf="!isEditable">
+          {{ project.startDate | dateFormat }}
+        </div>
+        <div *ngIf="isEditable">
+          <input type="date" formControlName="startDate">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Дата окончания</label>
+        <div *ngIf="!isEditable">
+          {{ project.endDate | dateFormat }}
+        </div>
+        <div *ngIf="isEditable">
+          <input type="date" formControlName="endDate">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Автор</label>
+        <div *ngIf="!isEditable">
+          {{ project.createdBy }}
+        </div>
+        <div *ngIf="isEditable">
+          <input formControlName="createdBy">
+        </div>
+      </div>
+    </div>
+    <div class="description-field">
+      <label>Описание</label>
+      <div *ngIf="!isEditable">
+        {{ project.description }}
+      </div>
+      <div *ngIf="isEditable">
+        <textarea formControlName="description" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="button" (click)="changeEditable()">
+        {{isEditable ? 'Отмена' : 'Изменить'}}
+      </button>
+      <button type="submit" [disabled]="form.invalid || form.pristine" *ngIf="isEditable">
+        Сохранить
+      </button>
+    </div>
+  </form>
+</div>

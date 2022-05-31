@@ -8,7 +8,7 @@ import { ru } from 'date-fns/locale'
 export class DateFormatPipe implements PipeTransform {
   constructor() {}
 
-  transform(value: string): string {
-    return format(parseISO(value), 'dd MMMMMM yyyy', { locale: ru });
+  transform(value: string, newFormat?: string): string {
+    return format(parseISO(value), newFormat || 'dd.MM.yyyy', { locale: ru });
   }
 }

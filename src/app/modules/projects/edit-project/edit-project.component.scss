@@ -1,0 +1,43 @@
+:host {
+  .container {
+    margin-left: 100px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  form {
+    width: 100%;
+    min-width: 420px;
+    .form-row {
+      display: flex;
+      flex-direction: row;
+      .form-field {
+        flex: 33;
+      }
+    }
+    .description-field {
+      margin-top: 20px;
+      textarea {
+        width: 100%;
+      }
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: gray;
+      font-size: 15px;
+    }
+    .actions {
+      text-align: center;
+      margin-top: 50px;
+      button {
+        margin-right: 20px;
+      }
+    }
+  }
+}

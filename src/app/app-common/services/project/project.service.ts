@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {StorageService} from "../storage/storage.service";
-import {IProject} from "../../interface/project";
+import { StorageService } from "../storage/storage.service";
+import { IProject } from "../../interface/project";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,20 @@ export class ProjectService {
   getProjectList(): IProject[] | null {
     const projects = this.storageService.getLocalStorage();
     if(!projects) return null;
-    else return JSON.parse(JSON.parse(projects)).Projects;
+    return JSON.parse(projects);
+  }
+
+  getProjectById(id: string): IProject | null {
+    const projects = this.getProjectList();
+    if(!projects) return null;
+    return projects.find((item) => item.id === id);
+  }
+
+  updateProject(project: IProject): void {
+    const updatedList = this.getProjectList().map((item) => {
+      if(item.id === project.id) return project;
+      return item;
+    });
+    this.storageService.setLocalStorage(updatedList);
   }
 }

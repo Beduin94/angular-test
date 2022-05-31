@@ -2,13 +2,13 @@
   <li *ngFor="let project of projects">
     <div class="container">
       <div class="date muted-text">
-        {{project.startDate | dateFormat}} - {{project.endDate | dateFormat}}
+        {{ project.startDate | dateFormat: 'dd MMMMMM yyyy'  }} - {{ project.endDate | dateFormat: 'dd MMMMMM yyyy' }}
       </div>
       <div class="project-name">
-        {{project.subject}}
+        {{ project.subject }}
       </div>
       <div class="created-by muted-text">
-        {{project.createdBy}}
+        {{ project.createdBy }}
       </div>
     </div>
   </li>

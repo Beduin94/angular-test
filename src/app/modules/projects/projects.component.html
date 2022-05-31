@@ -1,4 +1,6 @@
 <div *ngIf="projects" class="container">
   <app-project-list [projects]="projects"></app-project-list>
-  <router-outlet></router-outlet>
+  <div class="edit-project">
+    <router-outlet></router-outlet>
+  </div>
 </div>

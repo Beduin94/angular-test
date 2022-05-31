@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProjectsComponent } from "./projects.component";
-import {EditProjectComponent} from "./edit-project/edit-project.component";
+import { EditProjectComponent } from "./edit-project/edit-project.component";
+import { ProjectResolver } from "./resolvers/project.resolver";
 
 const routes: Routes = [
   {
@@ -10,7 +11,10 @@ const routes: Routes = [
     children: [
       {
         path: ':projectId',
-        component: EditProjectComponent
+        component: EditProjectComponent,
+        resolve: {
+          project: ProjectResolver,
+        },
       },
     ],
   },
