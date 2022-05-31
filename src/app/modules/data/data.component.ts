@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { StorageService } from "../../app-common/services/storage/storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-data',
@@ -16,6 +17,7 @@ export class DataComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private storageService: StorageService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +26,7 @@ export class DataComponent implements OnInit {
   save(): void {
     const data = this.form.value;
     this.storageService.setLocalStorage(data.json);
+    this.router.navigate(['projects']);
   }
 
 }

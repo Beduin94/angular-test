@@ -1,0 +1,15 @@
+<ul class="project-list">
+  <li *ngFor="let project of projects">
+    <div class="container">
+      <div class="date muted-text">
+        {{project.startDate | dateFormat}} - {{project.endDate | dateFormat}}
+      </div>
+      <div class="project-name">
+        {{project.subject}}
+      </div>
+      <div class="created-by muted-text">
+        {{project.createdBy}}
+      </div>
+    </div>
+  </li>
+</ul>

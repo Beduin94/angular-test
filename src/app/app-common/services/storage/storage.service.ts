@@ -8,9 +8,8 @@ export class StorageService {
 
   constructor() { }
 
-  getLocalStorage(): IProject[] | null {
-    const localData = localStorage.getItem('projects');
-    return localData ? JSON.parse(localData) : null;
+  getLocalStorage(): string | null {
+    return localStorage.getItem('projects');
   }
 
   setLocalStorage(projects: IProject[]): void {

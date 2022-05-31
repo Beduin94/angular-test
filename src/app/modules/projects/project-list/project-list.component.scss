@@ -1,0 +1,36 @@
+:host {
+  .project-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border: solid gray 2px;
+    width: 40%;
+    min-width: 240px;
+    li {
+      border-bottom: solid gray 2px;
+
+      .container {
+        padding: 10px;
+
+        .project-name {
+          font-size: 18px;
+          margin-top: 5px;
+        }
+
+        .created-by {
+          text-align: end;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .muted-text {
+    color: gray;
+    font-size: 14px;
+  }
+}
