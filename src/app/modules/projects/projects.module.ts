@@ -4,8 +4,8 @@ import { ProjectsComponent } from './projects.component';
 import { ProjectsRoutingModule } from "./projects-routing.module";
 import { ProjectListComponent } from './project-list/project-list.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
-import {AppCommonModule} from "../../app-common/app-common.module";
-import {ReactiveFormsModule} from "@angular/forms";
+import { AppCommonModule } from "../../app-common/app-common.module";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 

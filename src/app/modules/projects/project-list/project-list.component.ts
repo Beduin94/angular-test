@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {IProject} from "../../../app-common/interface/project";
+import { Component, Input, OnInit } from '@angular/core';
+import { IProject } from "../../../app-common/interface/project";
 
 @Component({
   selector: 'app-project-list',

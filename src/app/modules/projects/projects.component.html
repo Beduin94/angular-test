@@ -1,6 +1,9 @@
-<div *ngIf="projects" class="container">
+<div *ngIf="projects; else noData;" class="container">
   <app-project-list [projects]="projects"></app-project-list>
   <div class="edit-project">
     <router-outlet></router-outlet>
   </div>
 </div>
+<ng-template #noData>
+  <div class="no-data">Нет проектов</div>
+</ng-template>
