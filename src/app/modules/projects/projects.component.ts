@@ -9,7 +9,7 @@ import { ProjectService } from "../../app-common/services/project/project.servic
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: IProject[] | null = this.projectService.getProjectList();
+  projects: IProject[] = this.projectService.projects.value;
 
   constructor(
     private projectService: ProjectService

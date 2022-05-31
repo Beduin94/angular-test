@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from "../storage/storage.service";
 import { IProject } from "../../interface/project";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
+
+  projects: BehaviorSubject<IProject[]> = new BehaviorSubject<IProject[]>(this.getProjectList());
 
   constructor(
     private storageService: StorageService
@@ -29,5 +32,6 @@ export class ProjectService {
       return item;
     });
     this.storageService.setLocalStorage(updatedList);
+    this.projects.next(updatedList);
   }
 }

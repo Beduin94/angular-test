@@ -21,7 +21,7 @@ export class DateFormatService {
     return {
       ...project,
       startDate: parseISO(project.startDate).toISOString(),
-      endDate: parseISO(project.startDate).toISOString()
+      endDate: parseISO(project.endDate).toISOString()
     }
   }
 }
