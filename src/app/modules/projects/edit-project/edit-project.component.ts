@@ -30,6 +30,7 @@ export class EditProjectComponent implements OnInit {
   ) {
     this.route.data.subscribe(({ project }) => {
       this.project = project;
+      this.isEditable = false;
     });
   }
 
